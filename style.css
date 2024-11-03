@@ -10,6 +10,10 @@ body {
   color: white;
 }
 
+:root {
+  --expanding-gallery-border-radius: 20px;
+}
+
 
 .content-wrapper {
   max-width: 1200px;
@@ -26,7 +30,7 @@ body {
 .expanding-gallery {
   display: flex;
   width: 100%;
-  height: 85vh;
+  height: 70vh;
   gap: 1rem;
   overflow: hidden;
 
@@ -42,7 +46,7 @@ body {
   position: relative;
   text-align: center;
   height: auto;
-  border-radius: 20px;
+  border-radius: var(--expanding-gallery-border-radius);
 
 }
 
@@ -58,8 +62,8 @@ body {
   white-space: nowrap;
   padding: 10px;
   overflow: hidden;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: var(--expanding-gallery-border-radius);
+  border-bottom-left-radius: var(--expanding-gallery-border-radius);
   
 }
 
@@ -103,10 +107,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  .expanding-gallery {
-    flex-direction: column;
-  }
+
   html {
     font-size: 14px;
   }
+
+  .expanding-gallery {
+    flex-direction: column;
+    height: 80vh;
+  }
+
 }
